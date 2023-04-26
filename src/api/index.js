@@ -31,7 +31,7 @@ await instance({
 
 
 const API = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://server-stackoverflow-tza8.onrender.com",
 });
 
 API.interceptors.request.use((req) => {

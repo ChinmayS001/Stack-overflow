@@ -44,7 +44,7 @@ const SubscriptionForm = ({ currentUser, setSub }) => {
             key: '<YOUR RAZORPAY KEY>', // Enter the Key ID generated from the Dashboard
             amount: '',
             currency: "INR",
-            name: 'Soumya Corp.',
+            name: 'NullClass Corp.',
             description: 'Test Transaction',
             //image: 'https://example.com/your_logo',
             order_id: '',
@@ -130,6 +130,7 @@ const SubscriptionForm = ({ currentUser, setSub }) => {
   return (
     <div>
         <div>
+          <p>Test card number: 5267 3181 8797 5449, any CVV</p>
           <h2>Silver subscription</h2>
           <p>The price is 100 INR and you will be able to ask 10 question per day</p>
           <button onClick ={SilverSubscription} >Silver Subscription</button></div>

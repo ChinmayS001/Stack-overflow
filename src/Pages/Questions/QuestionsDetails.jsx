@@ -24,7 +24,7 @@ const QuestionsDetails = () => {
   const dispatch = useDispatch();
   const User = useSelector((state) => state.currentUserReducer);
   const location = useLocation();
-  const url = "http://localhost:3000";
+  const url = "https://server-stackoverflow-tza8.onrender.com";
 
   const handlePostAns = (e, answerLength) => {
     e.preventDefault();

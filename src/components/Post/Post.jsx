@@ -12,7 +12,7 @@ import Avatar from '../Avatar/Avatar.jsx';
 //import { likePost } from "../../api/PostsRequests";
 //import { useSelector } from "react-redux";
 import { deletePosts } from "../../actions/posts";
-const Post = ({ data }) => {
+const Post = ( {data} ) => {
  // data.image = 'https://res.cloudinary.com/dphix0dau/image/upload/v1682346084/Stack-OverFlow-Clone/l4girmrfdedrmqec2wld.png'
   //const { user } = useSelector((state) => state.authReducer.authData);
   const id = useParams().id;
@@ -20,7 +20,7 @@ const Post = ({ data }) => {
   const [likes, setLikes] = useState(data.likes.length)
   const dispatch = useDispatch();
   let dat = useSelector((store) => store.PostReducer);
-  
+  const curr = useSelector((store) => store.currentUserReducer);
   console.log(dat);
   console.log(data);
   const handleLike = () => {
@@ -32,7 +32,7 @@ const Post = ({ data }) => {
     //dispatch(deletePosts(data))
      console.log(data._id);
      const res = await deletePost(data.user._id,data._id);
-     console.log("Final Answer");
+     alert("The post is deleted please refresh the page");
   }
   return (
     <div className="Post">
@@ -49,8 +49,8 @@ const Post = ({ data }) => {
           style={{ cursor: "pointer" }}
           onClick={handleLike}
         />
-        {}
-        <img src={Share} alt=""  onClick = {handleDelete}   style={{ cursor: "pointer", width:"20px",height:"20px"}}     />
+        {curr.result._id===data.user._id?(<img src={Share} alt=""  onClick = {handleDelete}   style={{ cursor: "pointer", width:"20px",height:"20px"}}     />):''}
+        
       </div>
 
       <span style={{ color: "var(--gray)", fontSize: "12px" }}>
