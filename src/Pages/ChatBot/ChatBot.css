@@ -1,0 +1,31 @@
+.A1{
+    width: 70%;
+    align: centre;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+#one{
+        height: 10px;
+        
+        
+ }
+ button{
+    margin-right: auto;
+ }
+ .oneQA{
+    
+ }
+ .answer{
+    margin-top: 5px;
+    background-color: red;
+ }
+.ip1{
+    width:90%;
+}
+.question{margin-top: 5px;
+    background-color: rgb(60, 0, 255);
+}
+.sendMsg{
+    margin: auto auto;
+    
+} 

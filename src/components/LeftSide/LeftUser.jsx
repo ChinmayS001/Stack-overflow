@@ -1,0 +1,33 @@
+import React from 'react'
+import  {setCurrentUser}  from '../../actions/currentUser';
+import { useDispatch } from 'react-redux';
+import { addFriend } from '../../api';
+import { useRef } from 'react';
+import { useState } from 'react';
+import './leftUser.css'
+import { fetchAllUsers } from "../../actions/users.js"
+const LeftUser = (props) => {const dispatch = useDispatch();
+    let user = props.user;
+    const [foll,setfoll] = useState(user.followers);
+    let currUser = props.curUser;
+    async function addFriendC(){
+        const res = await addFriend(currUser.result._id,user._id);
+        res.data.token = currUser.result.token;
+       // console.log(res.data);
+       // if(res)
+        dispatch(setCurrentUser(res.data));//setfoll(res.data.result.followers)
+        fetchAllUsers();
+    }
+
+   //let myAvt = useRef();
+    //console.log(myAvt.style)// = "10px";  style = {{ display: 'flex', align-items: 'center', justify-content: 'flex-start', text-decoration: 'none', color: 'rgb(230, 16, 16)', }}
+    console.log(user)
+  return (<div className = "LeftUser"  >
+    
+    <h3 >{user?.name}</h3>
+              
+      <button onClick = {addFriendC} >AddFriend</button>
+      </div>)
+}
+
+export default LeftUser
