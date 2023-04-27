@@ -86,8 +86,8 @@ console.log(msg);
   return (
     <div class = "A1">
         {final}
-        <div class = "SendMsg">
-            <input className = 'ip1' name = "question"  onChange = {updateText}type="text" placeholder='Enter Message here' />
+        <div className = "SendMsg">
+            <input className = 'ip1' onChange = {updateText}type="text" placeholder='Enter Message here' />
            <button className = 'Chat-Button' onClick = {()=> {updateChat();}}><img id = "one" src= {Sm} alt="" /></button>
           </div>
     </div>
