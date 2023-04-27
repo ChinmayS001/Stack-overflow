@@ -42,6 +42,7 @@ const ChatBot = () => {//let chat = [];
 
 
 
+
 // const configuration = new Configuration({
 //   apiKey: "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",
 // });
@@ -53,7 +54,7 @@ const ChatBot = () => {//let chat = [];
 // });
 console.log(msg);
        setQuest([...ques,text]);
-       setChat([...chat,msg]);
+       setChat([...chat,msg.data.resp]);
        
        //setChat([...chat,opp]);
     
