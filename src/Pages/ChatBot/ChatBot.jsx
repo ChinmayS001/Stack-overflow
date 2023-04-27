@@ -41,7 +41,7 @@ const temperature = 0.5;
 // setChat([...chat,msg]);
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
