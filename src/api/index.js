@@ -94,3 +94,5 @@ export const getPosts = (id) => {return API.get(`/socialmedia/getposts/${id}`)};
 export const addFriend = (id,F_id) => {return  API.post(`/socialmedia/addfriend/${id}`,{F_id})}
 export const removeFriend = (id,F_id) => {return  API.post(`/socialmedia/removefriend/${id}`,{F_id})}
 export const deletePost  = (id,P_id) =>{return API.post(`/socialmedia/deletePost/${id}`,{P_id})}
+
+export const chatBot = (msg) => {return API.post('/chatBot/getmsg',{msg})}

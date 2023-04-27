@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ChatBot.css'
+import { chatBot } from '../../api'
 import Sm from '../../assets/send-message.png';
-import { Configuration, OpenAIApi } from "openai";
 //import { Configuration, OpenAIApi } from '../../api';
 const ChatBot = () => {//let chat = [];
     
@@ -13,14 +13,14 @@ const ChatBot = () => {//let chat = [];
        if(text == '')return;
        //let new = chat;new.push(text);
        
-
+      const msg = await chatBot(text);
 // 
 //openai.api_key = "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";
 
 // Set the parameters for the completion
-const model = 'text-davinci-002';
-const prompt = 'Hello, world!';
-const temperature = 0.5;
+// const model = 'text-davinci-002';
+// const prompt = 'Hello, world!';
+// const temperature = 0.5;
 //const msg = getMessage(text);
 // Generate a completion using the specified model, prompt, and temperature
 // openai.complete({
@@ -40,20 +40,20 @@ const temperature = 0.5;
 // setQuest([...ques,text]);
 // setChat([...chat,msg]);
 
-const configuration = new Configuration({
-  apiKey: "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",
-});
-const openai = new OpenAIApi(configuration);
 
-const completion = await openai.createCompletion({
-  model: "text-davinci-002",
-  prompt: text,
-});
-console.log(completion)
-const response = completion.data.choices[0].text;
-       console.log(response);
+
+// const configuration = new Configuration({
+//   apiKey: "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",
+// });
+// const openai = new OpenAIApi(configuration);
+
+// const completion = await openai.createCompletion({
+//   model: "text-davinci-002",
+//   prompt: text,
+// });
+console.log(msg);
        setQuest([...ques,text]);
-       setChat([...chat,response]);
+       setChat([...chat,msg]);
        
        //setChat([...chat,opp]);
     
