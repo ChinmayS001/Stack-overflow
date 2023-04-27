@@ -41,7 +41,7 @@ const temperature = 0.5;
 // setChat([...chat,msg]);
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -86,8 +86,8 @@ const response = completion.data.choices[0].text;
     <div class = "A1">
         {final}
         <div class = "SendMsg">
-            <input name = "question" class = "ip1"  onChange = {updateText}type="text" placeholder='Enter Message here' />
-           <button onClick = {()=> {updateChat();}}><img id = "one" src= {Sm} alt="" /></button>
+            <input className = 'ip1' name = "question"  onChange = {updateText}type="text" placeholder='Enter Message here' />
+           <button className = 'Chat-Button' onClick = {()=> {updateChat();}}><img id = "one" src= {Sm} alt="" /></button>
           </div>
     </div>
   )

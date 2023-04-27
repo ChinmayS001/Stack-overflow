@@ -14,8 +14,9 @@ const LeftUser = (props) => {const dispatch = useDispatch();
         //res.data.token = currUser.result.token;
         console.log(res.data);
         if(res)
-        dispatch(setCurrentUser(res.data));
+        dispatch(setCurrentUser(currUser._id));
         fetchAllUsers();
+        alert("Ther friend has been added, you can now see His/her posts, log out and log in to display the changes")
     }
 
    //let myAvt = useRef();

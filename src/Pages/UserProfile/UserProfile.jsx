@@ -44,7 +44,7 @@ const UserProfile = ({ slideIn, handleSlideIn }) => {
                 px="40px"
                 py="30px"
               >
-                {currentProfile?.name.charAt(0).toUpperCase()}
+                {currentProfile?.name?.charAt(0).toUpperCase()}
               </Avatar>
               <div className="user-name">
                 <h1>{currentProfile?.name}</h1>
@@ -52,10 +52,10 @@ const UserProfile = ({ slideIn, handleSlideIn }) => {
                   <FontAwesomeIcon icon={faBirthdayCake} /> Joined{" "}
                   {moment(currentProfile?.joinedOn).fromNow()}
                 </p>
-                <p>Questions remaining today:{currentUser.result.Q_rem}</p>
+                <p>Questions remaining today:{currentUser?.result.Q_rem}</p>
               </div>
             </div>
-            {currentUser?.result._id === id && (<>
+            {currentUser?.result?._id === id && (<>
               <div style={{ display: 'block' }}>
               <button
                 type="button"

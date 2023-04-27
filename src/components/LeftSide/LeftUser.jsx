@@ -1,5 +1,6 @@
 import React from 'react'
 import  {setCurrentUser}  from '../../actions/currentUser';
+
 import { useDispatch } from 'react-redux';
 import { addFriend } from '../../api';
 import { useRef } from 'react';
@@ -15,8 +16,13 @@ const LeftUser = (props) => {const dispatch = useDispatch();
         res.data.token = currUser.result.token;
        // console.log(res.data);
        // if(res)
+      //  dispatch({
+      //   type: "FETCH_CURRENT_USER",
+      //   payload: data,
+      // });
         dispatch(setCurrentUser(res.data));//setfoll(res.data.result.followers)
         fetchAllUsers();
+        alert("Ther friend has been removed,  His/her posts will be removed from you wall, log out and log in to display the changes")
     }
 
    //let myAvt = useRef();

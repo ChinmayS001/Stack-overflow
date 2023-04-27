@@ -1,14 +1,21 @@
+import {useState} from 'react';
 import React from 'react'
 import {getOrder,getKey,paymentVerification} from '../../api'
 import { useDispatch } from 'react-redux';
-import { setCurrentUser } from '../../actions/currentUser';
+import { setCurrentUser,getCurrentUserA } from '../../actions/currentUser';
 //import Razorpay from 'razorpay';
 const SubscriptionForm = ({ currentUser, setSub }) => {
+  console.log(currentUser.result.Q_rem);
+  const [noQ, noQUpd] = useState(currentUser.result.Q_rem);
   const dispatch = useDispatch();
 
-        function close(user){
-          console.log(user);
-          dispatch(setCurrentUser(user));
+        function close(none){
+          console.log(noQ);
+          currentUser.result.Q_rem = noQ;
+          dispatch({
+            type: "FETCH_CURRENT_USER",
+            payload: currentUser,
+          });
           setSub(false);
         }
 
@@ -63,7 +70,7 @@ const SubscriptionForm = ({ currentUser, setSub }) => {
                 alert('error');return;
               }
               
-              alert(result.data.message);
+              alert(result.data.message," log out and log in to update the changes");
               close(result.user);
             },
             prefill: {
@@ -83,6 +90,8 @@ const SubscriptionForm = ({ currentUser, setSub }) => {
 
 
           async function SilverSubscription(){
+             noQUpd(5);
+             console.log(noQ);
             await displayRazorpay();console.log("Order");
             const result = await getOrder(currentUser?.result?._id,{amount:100});
             if (!result) {
@@ -107,6 +116,7 @@ const SubscriptionForm = ({ currentUser, setSub }) => {
 
 
           async function GoldSubscription(){
+            noQUpd(1000);
             await displayRazorpay();
             const result = await getOrder(currentUser?.result?._id,{amount:1000});
             if (!result) {

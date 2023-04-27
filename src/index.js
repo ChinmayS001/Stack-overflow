@@ -10,7 +10,7 @@ import logger from 'redux-logger';
 // import dotenv from 'dotenv';
 // dotenv.config();
 const middleware = [thunk, logger]
-const store = createStore(Reducers, compose(applyMiddleware(thunk)));
+const store = createStore(Reducers, compose(applyMiddleware(...middleware)));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

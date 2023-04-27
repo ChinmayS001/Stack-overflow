@@ -56,7 +56,7 @@ export async function getMessage(msg) {
 
 
 const API = axios.create({
-  baseURL: "https://server-stackoverflow-tza8.onrender.com/'",
+  baseURL: "https://server-stackoverflow-tza8.onrender.com",
 });
 
 API.interceptors.request.use((req) => {
@@ -83,7 +83,7 @@ export const deleteAnswer = (id, answerId, noOfAnswers) => API.patch(`/answer/de
 
 export const getAllUsers = () => API.get("/user/getAllUsers");
 export const updateProfile = (id, updateData) => API.patch(`/user/update/${id}`, updateData);
-
+export const getCurrentUser = (id) => API.post(`/user/get/${id}`);
 
 export const getOrder = (id, amount) => {return API.post(`/payments/createOrder/${id}`,amount);}
 export const getKey = () => API.post('/payments/getKey');
