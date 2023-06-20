@@ -15,16 +15,17 @@ const Posts = () => {
   //  dispatch(getTimelinePosts(user._id));
   //}, []);
   const id = useParams().id;  
-  const [posts,setPosts] = useState(null);
-  //let posts; 
-  async function forasync(){
-   if(!posts){
-   const res = await getPosts(id);
-   setPosts(res.data);
-   }  }
-  forasync();
-  let loading = 0;
-  if(!posts)return 'No Posts'
+  let posts = useSelector((store) => store.PostsReducer);
+ // let posts; 
+//    async function forasync(){
+//   //  if(!posts){
+//     posts = await getPosts(id);
+//     setPosts(posts.data);
+//   //  } 
+//  }
+  //forasync();
+  let loading = 0;console.log("Posts",posts)
+  if(posts == null)return 'No Posts'
   //if(params.id) posts = posts.filter((post)=> post.userId===params.id);
   return (
     <div className="Posts">

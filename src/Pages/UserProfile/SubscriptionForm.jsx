@@ -5,12 +5,12 @@ import { useDispatch } from 'react-redux';
 import { setCurrentUser,getCurrentUserA } from '../../actions/currentUser';
 //import Razorpay from 'razorpay';
 const SubscriptionForm = ({ currentUser, setSub }) => {
-  console.log(currentUser.result.Q_rem);
+  //console.log(currentUser.result.Q_rem);
   const [noQ, noQUpd] = useState(currentUser.result.Q_rem);
   const dispatch = useDispatch();
 
         function close(none){
-          console.log(noQ);
+        //  console.log(noQ);
           currentUser.result.Q_rem = noQ;
           dispatch({
             type: "FETCH_CURRENT_USER",
@@ -92,7 +92,7 @@ const SubscriptionForm = ({ currentUser, setSub }) => {
           async function SilverSubscription(){
              noQUpd(5);
              console.log(noQ);
-            await displayRazorpay();console.log("Order");
+            await displayRazorpay();//console.log("Order");
             const result = await getOrder(currentUser?.result?._id,{amount:100});
             if (!result) {
               alert('Server error. Are you online?');

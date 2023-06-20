@@ -5,8 +5,9 @@ const RightSide = () => {
     const users = useSelector((state) => state.usersReducer);
     let currUser   = useSelector((state) => state.currentUserReducer);
     
-    console.log(currUser);
-    console.log(users);
+   // console.log(currUser);
+    //console.log(users);
+    console.log("THe right side is getting refreshed");
     //console.
     //console.log(currUser?.result);
     

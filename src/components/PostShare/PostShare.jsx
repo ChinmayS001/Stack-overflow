@@ -30,7 +30,7 @@ const PostShare = () => {
 
    const imageRef = useRef();
    const userId  = useParams().id;
-   console.log(userId);
+   //console.log(userId);
   // // handle post upload
   const handleUpload = async (e) => {
     e.preventDefault();
@@ -40,21 +40,22 @@ const PostShare = () => {
       userId,
       desc: desc.current.value,
     };
-    console.log(newPost.desc);
+    //console.log(newPost.desc);
     // if there is an image with post
     if (image) {
+      console.log("I swear to god I don't know why this is behaving like this")
       const data = new FormData();
       const fileName = Date.now() + image.name;
       data.append("name", fileName);
       data.append("file", image);
       data.append("desc",desc.current.value)
       newPost.image = fileName;
-      console.log(newPost);
+      //console.log(newPost);
       try {
         //dispatch(uploadImage(data));
         const res = await postImage(userId,data);
         alert("Uploaded, refresh the page to view")
-        console.log(res);
+        //console.log(res);
       } catch (err) {
         console.log(err);
       }

@@ -14,7 +14,7 @@ const Navbar = ({ handleSlideIn }) => {
   const dispatch = useDispatch();
   var User = useSelector((state) => state.currentUserReducer);
  // console.log(User);
-  console.log(User);
+ // console.log(User);
  // User = null;
   const navigate = useNavigate();
 

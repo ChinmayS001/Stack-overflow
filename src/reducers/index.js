@@ -9,4 +9,5 @@ export default combineReducers({
   currentUserReducer,
   questionsReducer,
   usersReducer,
+  PostsReducer
 });
